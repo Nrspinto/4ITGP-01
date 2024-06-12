@@ -1,0 +1,214 @@
+nromu@LAPTOP-T7U38FFV MINGW64 ~
+$ cd Documents
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents
+$ mkdir 4ITGP-01
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents
+$ cd 4ITGP-01
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01
+$ git config --global user.name"Nrspinto"
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01
+$ git config --global user.email nromualdspinto@gmail.com
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01
+$ git config --global color.diff auto
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01
+$ git config --global color.status auto
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01
+$ git config --global color.branch auto
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01
+$ git config --global core.editor notepad++
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01
+$ git config --global merge.tool vimdiff
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01
+$ git init
+Initialized empty Git repository in C:/Users/nromu/Documents/4ITGP-01/.git/
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (master)
+$ cat > index.html
+<!DOCTYPE html>
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (master)
+$ pwd
+/c/Users/nromu/Documents/4ITGP-01
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (master)
+$ cat > styles.css
+h1    {color: D arkGreen}
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (master)
+$  git add index.html styles.css
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the xt time Git touches it
+warning: in the working copy of 'styles.css', LF will be replaced by CRLF the xt time Git touches it
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (master)
+$ git commit -m "Ajout des fichiers html et css de base"
+[master (root-commit) 457d309] Ajout des fichiers html et css de base
+ 2 files changed, 13 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 styles.css
+ 
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (master)
+$ git remote add origin https://github.com/Nrspinto/4ITGP-01.git             #après création du repository sur github
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (master)
+$ git branch -M main
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$ git push -u origin main
+To https://github.com/Nrspinto/4ITGP-01.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Nrspinto/4ITGP-01.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$ git pull -u origin main
+error: unknown switch `u'                                      #après avoir rencontré cette erreur, l'aide ci-dessous m'a permis de bien effectuer mon premier push
+usage: git pull [<options>] [<repository> [<refspec>...]]
+
+    -v, --[no-]verbose    be more verbose
+    -q, --[no-]quiet      be more quiet
+    --[no-]progress       force progress reporting
+    --[no-]recurse-submodules[=<on-demand>]
+                          control for recursive fetching of submodules
+
+Options related to merging
+    -r, --[no-]rebase[=(false|true|merges|interactive)]
+                          incorporate changes by rebasing rather than merging
+    -n                    do not show a diffstat at the end of the merge
+    --[no-]stat           show a diffstat at the end of the merge
+    --[no-]log[=<n>]      add (at most <n>) entries from shortlog to merge comt message
+    --[no-]signoff[=...]  add a Signed-off-by trailer
+    --[no-]squash         create a single commit instead of doing a merge
+    --[no-]commit         perform a commit if the merge succeeds (default)
+    --[no-]edit           edit message before committing
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]ff             allow fast-forward
+    --ff-only             abort if fast-forward is not possible
+    --[no-]verify         control use of pre-merge-commit and commit-msg hooks
+    --[no-]verify-signatures
+                          verify that the named commit has a valid GPG signatu
+    --[no-]autostash      automatically stash/stash pop before and after
+    -s, --[no-]strategy <strategy>
+                          merge strategy to use
+    -X, --[no-]strategy-option <option=value>
+                          option for selected merge strategy
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+    --[no-]allow-unrelated-histories
+                          allow merging unrelated histories
+
+Options related to fetching
+    --[no-]all            fetch from all remotes
+    -a, --[no-]append     append to .git/FETCH_HEAD instead of overwriting
+    --[no-]upload-pack <path>
+                          path to upload pack on remote end
+    -f, --[no-]force      force overwrite of local branch
+    -t, --[no-]tags       fetch all tags and associated objects
+    -p, --[no-]prune      prune remote-tracking branches no longer on remote
+    -j, --[no-]jobs[=<n>] number of submodules pulled in parallel
+    --[no-]dry-run        dry run
+    -k, --[no-]keep       keep downloaded pack
+    --[no-]depth <depth>  deepen history of shallow clone
+    --[no-]shallow-since <time>
+                          deepen history of shallow repository based on time
+    --[no-]shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --[no-]deepen <n>     deepen history of shallow clone
+    --unshallow           convert to a complete repository
+    --[no-]update-shallow accept refs that update .git/shallow
+    --refmap <refmap>     specify fetch refmap
+    -o, --[no-]server-option <server-specific>
+                          option to transmit
+    -4, --[no-]ipv4       use IPv4 addresses only
+    -6, --[no-]ipv6       use IPv6 addresses only
+    --[no-]negotiation-tip <revision>
+                          report that we have only objects reachable from thisbject
+    --[no-]show-forced-updates
+                          check for forced-updates on all updated branches
+    --[no-]set-upstream   set upstream for git pull/fetch
+
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$ git pull -r origin main                                              #correction de l'erreur
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 875 bytes | 109.00 KiB/s, done.
+From https://github.com/Nrspinto/4ITGP-01
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+Successfully rebased and updated refs/heads/main.
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$ git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 519 bytes | 519.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Nrspinto/4ITGP-01.git
+   46db441..739df90  main -> main
+branch 'main' set up to track 'origin/main'.
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$ git add index.html
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$ git commit -m "Modification de la deuxième ligne"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$ git commit -m "Modification de la deuxième ligne"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$  git push origin main
+Everything up-to-date
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$ git add index.html
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$ git commit -m "Modification de la 9ième ligne"
+[main 2ec6fb9] Modification de la 9ième ligne
+ 1 file changed, 1 insertion(+)
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$  git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 449 bytes | 449.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Nrspinto/4ITGP-01.git
+   739df90..2ec6fb9  main -> main
+
+nromu@LAPTOP-T7U38FFV MINGW64 ~/Documents/4ITGP-01 (main)
+$
